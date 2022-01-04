@@ -7,7 +7,10 @@ import hello.core.member.MemberServiceImpl;
 //테스트코드 순수자바
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+//        MemberService memberService = new MemberServiceImpl(memberRepository);
+
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
