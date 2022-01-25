@@ -31,8 +31,8 @@ public class AppConfig {//전체 구성: 공연기획자가 넣어줌
     @Bean
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
-        //return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        //return null;
     }
 
     @Bean
